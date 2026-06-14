@@ -1,0 +1,67 @@
+@define-color background #3A372F;
+@define-color primary #BFAA80;
+@define-color button-border #D08B57; 
+
+
+#lock {
+    background-image: url("/home/sanguine/Pictures/wlogout/tile0.png");
+}
+#logout {
+    background-image: url("/home/sanguine/Pictures/wlogout/tile3.png");
+}
+#suspend {
+    background-image: url("/home/sanguine/Pictures/wlogout/tile1.png");
+}
+#hibernate {
+    background-image: url("/home/sanguine/Pictures/wlogout/tile4.png");
+}
+#reboot {
+    background-image: url("/home/sanguine/Pictures/wlogout/tile2.png");
+}
+#shutdown {
+    background-image: url("/home/sanguine/Pictures/wlogout/tile5.png");
+}
+
+* {
+    background-image: none;
+    box-shadow: none;
+}
+
+window {
+    background-color: rgba(30, 30, 30, 0.8);
+}
+
+button {
+    font-family: "Jetbrains Mono", monospace;
+    font-size: 24px;
+    letter-spacing: 5px;
+    background-color: rgba(0,0,0,0.6);
+    background-blend-mode: overlay;
+    border: 2px solid @button-border;
+    border-radius: 5px;
+    margin: 5px;
+    min-width: 80px;
+    min-height: 300px;
+}
+
+button:hover,
+button:focus {
+    background-color: rgba(191,170,128,0.6);
+    border-color: @primary;
+    color: #FFFFFF;
+    text-shadow: 
+        -1px -1px 0 #9e6031,  /* Top Left */
+         1px -1px 0 #9e6031,  /* Top Right */
+        -1px  1px 0 #9e6031,  /* Bottom Left */
+         1px  1px 0 #9e6031;  /* Bottom Right */
+}
+
+
+/* Individual button styling */
+#lock, #logout, #suspend, #hibernate, #shutdown, #reboot {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 95% 92.5%;
+    /*background-size: cover;*/
+
+}
