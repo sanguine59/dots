@@ -1,0 +1,161 @@
+[{
+    "layer": "top",
+    "width": 1600,
+    "margin-top": 10,
+    "spacing": 10,
+    "tooltip": false,
+    
+    
+    /*
+    LEFT MODULES:
+    - clock
+    - mpris 
+    */
+
+    "modules-left": [
+        "clock",
+        "mpris"
+    ],
+
+    "clock": {
+        "format": "{:%H:%M}"
+    },
+
+    "mpris": {
+        "format": "{artist} - {title}",
+        "format-paused": "{artist} - {title}",
+        "status-icons": {
+            // "playing": "▶",
+            // "paused": "⏸"
+        },
+        "max-length": 40,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next"
+    },
+
+    /*
+    CENTER MODULES:
+    - hyprland/workspaces
+    */
+
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "on-click": "activate",
+        "sort-by-number": true
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true
+    },
+
+    /*
+    RIGHT MODULES:
+    - group/network
+    - group/audio
+    - group/sysinfo
+    */
+
+    "modules-right": [
+        "group/network",
+        "group/audio",
+        "group/sysinfo"
+    ],
+
+    /*
+    NETWORKS
+    */
+
+    "group/network": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 300,
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "network",
+            "network#detail"
+        ],
+        "on-click": "kitty -e nmtui"
+    },
+
+    "network": {
+        "interface": "enp5s0",
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "",
+        "max-length": 50,
+        "on-click": "kitty -e nmtui"
+    },
+
+    "network#detail": {
+        "interface": "enp5s0",
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "kitty -e nmtui"
+    },
+
+    /*
+    AUDIO
+    */
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+
+    "group/audio": {
+        "orientation": "horizontal",
+        "children-class": "audio-slider",
+        "drawer": {
+            "transition-duration": 300,
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "pulseaudio",
+            "pulseaudio/slider"
+        ]
+    },
+
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+
+    /*
+    SYSTEM INFORMATION
+    */
+
+    "group/sysinfo": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory"
+        ],
+        "on-click": "kitty -e btop"
+    },
+
+    "cpu": {
+        "interval": 5,
+        "format": "[CPU: {usage}% |",
+        "on-click": "kitty -e btop"
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": " RAM: {percentage}%]",
+        "on-click": "kitty -e btop"
+    }
+
+}]

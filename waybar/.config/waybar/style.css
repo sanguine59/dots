@@ -1,214 +1,108 @@
-/* colors defined at top for easy configuring */
-@define-color background #2C2A24;
-@define-color second-background #3A372F;
-@define-color text #DDD5C4;
-@define-color borders #A0907A;
-@define-color focused #D08B57;
-@define-color focused2 #BFAA80;
-@define-color color1 #7699A3;
-@define-color color2 #8D7AAE;
-@define-color color3 #78997A;
-@define-color urgent #B05A5A;
+/*
+--steel-blue:    #5B9BD5;
+--sky-blue:      #8EC5E6;
+--midnight:      #0A0F14;
+--navy:          #1A2535;
+--deep-magenta:  #B5338A;
+--electric-cyan: #00C8D4;
+--amber:         #E8A030;
+--lavender:      #9B8FD5;
+*/
 
 
-/* font declared */
 * {
-  font-family: "Iosevka Nerd Font";
-  font-size: 15px;
+    border: none;
+    border-radius: 0px;
+    font-family: "SF Pro Display", "JetBrainsMono Nerd Font Propo";
+    padding: 0px;
+    margin: 0px;
+    min-width: 10px;
 }
 
-#custom-openbracket,
-#custom-closebracket {
-  margin: 0 5px;
-}
-
-/* idk what all this does */
 window#waybar {
-  background-color: transparent;
-  border-bottom: 0;
-  color: @text;
-  transition: background-color 0.5s;
+  background: #1A2535;
+  color: #5B9BD5;
+  border-radius: 12px;
 }
 
-window#waybar.hidden {
-  opacity: 0.2;
+#cpu {
+    color: #8EC5E6;
 }
 
-window#waybar.empty #window {
-  background-color: transparent;
+#memory {
+    color: #8EC5E6;
 }
 
+#clock {
+  color: #8EC5E6;
+}
 
-/* configuring the modules */
 .modules-left {
-  margin: 10px 0 0 10px;
-  padding: 0 0 0 7px;
-  background-color: @background;
-  border: 2px solid @focused;
-}
-
-.modules-center {
-  margin: 10px 0 0 0;
-  padding: 0 10px 0 10px;
-  background-color: @background;
-  border: 2px solid @focused;
+  margin-left: 10px;
 }
 
 .modules-right {
-  margin: 10px 10px 0 0;
-  padding: 0 10px 0 10px;
-  background-color: @background;
-  border: 2px solid @focused;
+  margin-right: 10px;
 }
 
-
-/* whats this?? */
-button {
-  border: none;
-}
-
-
-/* left island */
-
-/* menu pannel */
-#custom-arch,
-#custom-powerprofile,
-#custom-themeswitcher {
-  padding-right: 10px;
-  padding-left: 5px;
-  font-size: 15px;
-  border-radius: 8px;
-}
-
-#custom-arch:hover {
-  color: @color1;
-}
-
-#custom-powerprofile:hover {
-  color: @color1
-}
-
-#custom-themeswitcher:hover {
-  color: @color1;
-}
-
-/* workspace pannel */
 #workspaces button {
-  min-width: 0;
-  padding: 0 8px 0 8px;
-  background-color: transparent;
-  color: @text;
-  border-radius: 0;
+    all: unset;
+    min-width: 24px;
+    min-height: 24px;
+    padding: 0;
+    margin: 2px 4px;
+    color: #8EC5E6;
+    border-radius: 100px;
+    border: 2px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
 }
 
-#workspaces button:hover {
-  background-color: @second-background;
+#workspaces button:not(.active):hover {
+    border-color: #8EC5E6;
 }
 
 #workspaces button.active {
-  color: @focused2;
-  background-color: @second-background;
+    border-color: #5B9BD5;
+    background: #0A0F14;
+    color: #5B9BD5;
 }
 
-#workspaces button.urgent {
-  background-color: @urgent;
+#pulseaudio-slider {
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+}
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 80px;
+    border-radius: 5px;
+    background: #1A2535;
+}
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background: #8EC5E6;
 }
 
-/* no idea what this does */
-.modules-left>widget:first-child>#workspaces {
-  margin-left: 0;
+#network.detail {
+    margin-left: 10px;
 }
 
-.modules-right>widget:last-child>#workspaces {
-  margin-right: 0;
-}
-
-/* media player */
 #mpris {
-  margin: 0 0 0 5px;
-  padding: 0 9px;
-  background-color: @background;
-  color: @text;
+    background: transparent;
+    padding: 0 8px;
+    border-radius: 8px;
 }
 
 #mpris.playing {
-  background-color: @color3;
-  border-radius: 2px;
-  color: @background;
-}
-
-
-/* center module  */
-#window {
-  padding: 0 5px;
-}
-
-/* Right Island */
-
-/* module general styles */
-#clock,
-#battery,
-#cpu,
-#memory,
-#custom-clipboard,
-#custom-bluetooth,
-#network {
-  padding: 0 10px;
-}
-
-#clock:hover,
-#battery:hover,
-#custom-cpu:hover,
-#custom-clipboard:hover,
-#custom-bluetooth:hover,
-#network:hover,
-#idle_inhibitor:hover,
-#custom-swaync:hover,
-#backlight:hover,
-#wireplumber:hover {
-  color: @color1;
-}
-
-#idle_inhibitor {
-  padding: 0 10px 0 0;
-}
-
-#custom-powerprofile {
-  padding: 0 8px 0 4px;
-}
-
-/* Remaining Modules */
-#backlight,
-#wireplumber {
-  padding: 0 5px;
-}
-
-#wireplumber.muted {
-  background-color: @color2;
-}
-
-#custom-swaync {
-  padding: 0 10px 0 5px;
-  font-size: 16px;
-  /* same scale as other icons */
-  color: @text;
-}
-
-#battery.charging,
-#battery.plugged {
-  background-color: @focused2 ;
-  color: @background;
-}
-
-#battery.critical:not(.charging) {
-  background-color: @urgent;
-  color: @text;
-  animation: blink 0.5s steps(12) infinite alternate;
-}
-
-@keyframes blink {
-  to {
-    background-color: @second-background;
-    color: @text;
-  }
+    background: #5B9BD5;
+    color: #0A0F14;
 }
