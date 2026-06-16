@@ -1,7 +1,13 @@
-@define-color background #3A372F;
-@define-color primary #BFAA80;
-@define-color button-border #D08B57; 
-
+/*
+--steel-blue:    #5B9BD5;
+--sky-blue:      #8EC5E6;
+--midnight:      #0A0F14;
+--navy:          #1A2535;
+--deep-magenta:  #B5338A;
+--electric-cyan: #00C8D4;
+--amber:         #E8A030;
+--lavender:      #9B8FD5;
+*/
 
 #lock {
     background-image: url("/home/sanguine/Pictures/wlogout/tile0.png");
@@ -28,16 +34,16 @@
 }
 
 window {
-    background-color: rgba(30, 30, 30, 0.8);
+    background-color: rgba(10, 15, 20, 0.55);
 }
 
 button {
     font-family: "Jetbrains Mono", monospace;
     font-size: 24px;
     letter-spacing: 5px;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(26, 37, 53, 0.45);
     background-blend-mode: overlay;
-    border: 2px solid @button-border;
+    border: 2px solid rgba(142, 197, 230, 0.25);
     border-radius: 5px;
     margin: 5px;
     min-width: 80px;
@@ -46,14 +52,14 @@ button {
 
 button:hover,
 button:focus {
-    background-color: rgba(191,170,128,0.6);
-    border-color: @primary;
+    background-color: rgba(10, 15, 20, 0.55);
+    border-color: #5B9BD5;
     color: #FFFFFF;
-    text-shadow: 
-        -1px -1px 0 #9e6031,  /* Top Left */
-         1px -1px 0 #9e6031,  /* Top Right */
-        -1px  1px 0 #9e6031,  /* Bottom Left */
-         1px  1px 0 #9e6031;  /* Bottom Right */
+    text-shadow:
+        -1px -1px 0 #00C8D4,  /* Top Left */
+         1px -1px 0 #00C8D4,  /* Top Right */
+        -1px  1px 0 #00C8D4,  /* Bottom Left */
+         1px  1px 0 #00C8D4;  /* Bottom Right */
 }
 
 

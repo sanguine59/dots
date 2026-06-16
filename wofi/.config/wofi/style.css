@@ -1,4 +1,13 @@
-@import '/home/plagus/.config/wofi/gruvbox.css';
+/*
+--steel-blue:     ;
+--sky-blue:      #8EC5E6;
+--midnight:      #0A0F14;
+--navy:          #1A2535;
+--deep-magenta:  #B5338A;
+--electric-cyan: #00C8D4;
+--amber:         #E8A030;
+--lavender:      #9B8FD5;
+*/
 
 * {
     font-family: 'Iosevka Nerd Font mono';
@@ -9,17 +18,18 @@
  window {
     margin: 0px;
     padding: 10px;
-    border-radius: 0px;
-    background-color: @bg;
+    /* border-radius: 12px; */
+    background-color: rgba(26, 37, 53, 0.55);
+    /* border: 1px solid rgba(142, 197, 230, 0.25); */
  }
 
  /* Inner Box */
  #inner-box {
-    margin: 5px;
+    /* margin: 5px; */
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: @bg;
+    background-color: transparent;
  }
 
 
@@ -28,7 +38,7 @@
     margin: 5px;
     padding: 10px;
     border: none;
-    background-color: @bg;
+    background-color: transparent;
     border-radius: 5px;
  }
 
@@ -43,9 +53,9 @@
  #input {
     margin: 10px 25px 10px 25px;
     padding: 10px;
-    color: @accent;
-    background-color: @bg;
-    border: 2px solid @accent;
+    color: #8EC5E6;
+    background-color: #1A2535;
+    border: 2px solid #8EC5E6;
     border-radius: 5px;
  }
 
@@ -54,18 +64,19 @@
     margin: 5px;
     padding: 10px;
     border: none;
-    color: @txt;
+    color: #FFFFFF;
  }
+
 
 /* Selected Entry */
 #entry:selected {
-   background-color: @bg;
-   border: 1px solid @accent2;
+   background-color: none;
+   border: 1px solid #8EC5E6;
    border-radius: 5px;
 }
 
  #entry:selected #text {
-    color: @txt;
+    color: #FFFFFF;
  }
  image {
    margin-left: 10px;

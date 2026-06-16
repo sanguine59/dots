@@ -33,6 +33,18 @@ window#waybar {
     color: #8EC5E6;
 }
 
+#custom-power {
+    color: #8EC5E6;
+}
+
+#network {
+    color: #8EC5E6;
+}
+
+#pulseaudio {
+    color: #8EC5E6;
+}
+
 #clock {
   color: #8EC5E6;
 }
@@ -96,13 +108,24 @@ window#waybar {
     margin-left: 10px;
 }
 
+#custom-arch {
+    color: #8EC5E6;
+    font-size: 16px;
+}
+
 #mpris {
     background: transparent;
     padding: 0 8px;
     border-radius: 8px;
+    margin-top: -2px;
+    color: #8EC5E6;
 }
 
 #mpris.playing {
     background: #5B9BD5;
     color: #0A0F14;
+}
+
+#sysinfo {
+    color: #8EC5E6;
 }
