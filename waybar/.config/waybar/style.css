@@ -108,6 +108,15 @@ window#waybar {
     margin-left: 10px;
 }
 
+#battery {
+    color: #8EC5E6;
+}
+
+#battery.detail {
+    color: #8EC5E6;
+    margin-left: 4px;
+}
+
 #custom-arch {
     color: #8EC5E6;
     font-size: 16px;
