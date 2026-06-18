@@ -22,7 +22,7 @@
     "custom/arch":{
         "format": "󰣇 |",
         "tooltip": false,
-        "on-click": "kitty"
+        "on-click": "~/Projects/dots/.config/ags/toggle.sh"
     },
 
     "clock": {
